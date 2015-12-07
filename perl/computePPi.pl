@@ -15,6 +15,11 @@ my $HOME = $ENV{HOME} || die "NO \$HOME variable set\n";
 my $GRPATH = $ENV{GRPATH} || die "NO \$GRPATH variable set\n";
 my $R_LIBS = $ENV{R_LIBS} || die "NO \$R_LIBS variable\n";
 my $CHIGP_PATH = "$ENV{GRPATH}/CHIGP/";
+my $TABIX_BIN = $ENV{TABIX_BIN} || `which tabix`;
+
+if(!$TABIX_BIN){
+  print "\$TABIX_BIN not set. Is tabix installed ? If not centrally please set env TABIX_BIN. \n";
+}
 
 ## site specific conf file for macd - see http://github.com/ollyburren/macd
 ## for more details
@@ -39,7 +44,6 @@ my $FILEPATTERN='^0\.1';
 my $RSCRIPT="/home/oliver/bin/Rscript --vanilla $CHIGP_PATH/R/computePPi.R";
 my $THOU_GENOMES_PREFIX="$BASE_DIR/1kgenome/VCF/EUR/by.chr.phase3/ALL.";
 my $THOU_GENOMES_SUFFIX=".phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.EUR.vcf.gz";
-my $TABIX_BIN="/home/oliver/bin/tabix_0.2.5";
 ## prior
 my $PI_I=1e-4;
 my $LOG_DIR = "$GRPATH/cogs_paper/log/cogs_ppi/";
