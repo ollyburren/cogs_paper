@@ -1,0 +1,9 @@
+## set up where git repos so we can find CHIGP
+export GRPATHa=
+## compute ppi from pvals and collate
+## use the queue to do this
+perl ../perl/computePPi.pl
+./collate_ppi.sh
+## generate misfud specific resource files
+./gen_resource_files.sh
+## compute gene scores
