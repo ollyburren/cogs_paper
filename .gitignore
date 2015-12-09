@@ -2,3 +2,5 @@
 /log/*
 *~
 #*
+.Rproj.user
+.Rhistory
