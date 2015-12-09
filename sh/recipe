@@ -6,4 +6,18 @@ perl ../perl/computePPi.pl
 ./collate_ppi.sh
 ## generate misfud specific resource files
 ./gen_resource_files.sh
-## compute gene scores
+# compute gene scores
+.//compute_gene_scores.sh
+
+## window based multiple assignment
+./compute_window_multi_gene_scores.sh
+
+## hindIII fragment closest gene assignment
+../closest_hindIII_gene_assignment.sh
+../compute_closest_gene_scores.sh
+
+## collate all the results for gsea
+./collate_results.sh
+
+## carry out gsea analysis and plot comparison of methods
+Rscript ../R/gsea.R
